@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6EA9412A-97F3-49D2-A543-448EE34D8235}</ProjectGuid>
+    <ProjectGuid>{6F0FCDF1-C8CD-4378-AC04-6151C4064A36}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aula24._05_EF_MF</RootNamespace>
-    <AssemblyName>Aula24.05_EF_MF</AssemblyName>
+    <RootNamespace>ProjetoAcademia</RootNamespace>
+    <AssemblyName>ProjetoAcademia</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -145,7 +145,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Produtos\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
@@ -167,32 +168,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\BaseDados.edmx">
+    <EntityDeploy Include="Models\AcademiaDados.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseDados.Designer.cs</LastGenOutput>
+      <LastGenOutput>AcademiaDados.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BaseDados.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDados.Context.cs</LastGenOutput>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\BaseDados.edmx.diagram">
-      <DependentUpon>BaseDados.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\DadosAcademia.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DadosAcademia.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DadosAcademia.edmx.diagram">
-      <DependentUpon>DadosAcademia.edmx</DependentUpon>
+    <Content Include="Models\AcademiaDados.edmx.diagram">
+      <DependentUpon>AcademiaDados.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Models\BaseDados.edmx.sql" />
-    <Content Include="Models\BaseDados.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDados.cs</LastGenOutput>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -231,7 +214,6 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\Categorias\Lista.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -263,7 +245,6 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -274,31 +255,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.Context.cs">
+    <Compile Include="Models\AcademiaDados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BaseDados.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BaseDados.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Categoria.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DadosAcademia.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DadosAcademia.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Produto.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>AcademiaDados.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -322,20 +282,8 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\BasePage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Categorias\Lista.aspx.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Categorias\Lista.aspx.designer.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -349,9 +297,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50379</DevelopmentServerPort>
+          <DevelopmentServerPort>56254</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50379/</IISUrl>
+          <IISUrl>http://localhost:56254/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="DadosAcademia.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="DadosAcademiaTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DadosAcademia" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DadosAcademiaContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Academias" EntityType="DadosAcademia.Academia" />
+          <EntitySet Name="Alunos" EntityType="DadosAcademia.Aluno" />
+          <AssociationSet Name="AcademiaAluno" Association="DadosAcademia.AcademiaAluno">
+            <End Role="Academia" EntitySet="Academias" />
+            <End Role="Aluno" EntitySet="Alunos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Academia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Endereço" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="Professor" Type="String" Nullable="false" />
+          <NavigationProperty Name="Aluno" Relationship="DadosAcademia.AcademiaAluno" FromRole="Academia" ToRole="Aluno" />
+        </EntityType>
+        <EntityType Name="Aluno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Peso" Type="String" Nullable="false" />
+          <Property Name="Altura" Type="String" Nullable="false" />
+          <Property Name="Idade" Type="String" Nullable="false" />
+          <Property Name="Endereço" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="Objetivo" Type="Boolean" Nullable="false" />
+          <Property Name="Ativo" Type="String" Nullable="false" />
+          <NavigationProperty Name="Academia" Relationship="DadosAcademia.AcademiaAluno" FromRole="Aluno" ToRole="Academia" />
+          <Property Name="AcademiaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="AcademiaAluno">
+          <End Type="DadosAcademia.Academia" Role="Academia" Multiplicity="1" />
+          <End Type="DadosAcademia.Aluno" Role="Aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Academia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aluno">
+              <PropertyRef Name="AcademiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="DadosAcademia" />
+        <Alias Key="Target" Value="DadosAcademia.Store" />
+        <EntityContainerMapping CdmEntityContainer="DadosAcademiaContainer" StorageEntityContainer="DadosAcademiaTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
