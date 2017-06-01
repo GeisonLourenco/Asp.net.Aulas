@@ -13,5 +13,5 @@
     <asp:TextBox ID="txtProfessor" runat="server" TextMode="MultiLine"></asp:TextBox>
     <br />
     <asp:Button ID="btnSalvar" CssClass="btn btn-primary" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
-    <asp:Button ID="btnCancelar"  CssClass="btn btn-primary" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
-</asp:Content>
+    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+    </asp:Content>
