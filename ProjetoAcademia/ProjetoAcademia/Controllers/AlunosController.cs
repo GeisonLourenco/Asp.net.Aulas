@@ -8,9 +8,8 @@ using ProjetoAcademia.Views;
 
 namespace ProjetoAcademia.Controllers
 {
-    public class AlunosController
+    public class AlunosController : BasePage
     {
-        protected BaseDeDadosContainer contexto = new BaseDeDadosContainer();
 
         public void Adicionar(Aluno aluno)
         {
@@ -31,9 +30,19 @@ namespace ProjetoAcademia.Controllers
             return contexto.Alunos.Where(c => c.Ativo == false).ToList();
         }
 
-        public Aluno BuscarCategoriaPorID(int id)
+        public Aluno BuscarAlunoPorID(int id)
         {
             return contexto.Alunos.Find(id);
+        }
+
+        public Aluno BuscarAlunoPorNome(string nome)
+        {
+            return contexto.Alunos.FirstOrDefault(x => x.Nome.Equals(nome));
+        }
+
+        internal Aluno BuscarAlunoPorID(Aluno aluno)
+        {
+            throw new NotImplementedException();
         }
 
         /*Exclusão fisica (apaga o registro do banco)

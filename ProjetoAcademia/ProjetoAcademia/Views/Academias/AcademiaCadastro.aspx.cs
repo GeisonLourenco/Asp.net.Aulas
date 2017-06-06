@@ -9,7 +9,7 @@ using ProjetoAcademia.Controllers;
 
 namespace ProjetoAcademia.Views.Academias
 {
-    public partial class AcademiaCadastro : System.Web.UI.Page
+    public partial class AcademiaCadastro : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

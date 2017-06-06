@@ -7,63 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoAcademia.Views.Alunos {
+namespace ProjetoAcademia.Views.Academias {
     
     
-    public partial class AlunoLista {
+    public partial class BuscaAcademia {
         
         /// <summary>
-        /// UpdatePanel2 control.
+        /// lblBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        protected global::System.Web.UI.WebControls.Label lblBuscar;
         
         /// <summary>
-        /// gdvAlunos control.
+        /// txtBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvAlunos;
+        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// lblExcAluno control.
+        /// lblEditAcademia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblExcAluno;
+        protected global::System.Web.UI.WebControls.Label lblEditAcademia;
         
         /// <summary>
-        /// txtExcAluno control.
+        /// txtEditAcademia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtExcAluno;
+        protected global::System.Web.UI.WebControls.TextBox txtEditAcademia;
         
         /// <summary>
-        /// btnExcAluno control.
+        /// btnEditAcademia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExcAluno;
+        protected global::System.Web.UI.WebControls.Button btnEditAcademia;
     }
 }

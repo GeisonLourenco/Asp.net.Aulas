@@ -9,7 +9,7 @@ namespace ProjetoAcademia.Views
 {
     public class BasePage : System.Web.UI.Page
     {
-        protected BaseDeDadosContainer contexto = new BaseDeDadosContainer();
+        protected static BaseDeDadosContainer contexto = new BaseDeDadosContainer();
     }
 
 }

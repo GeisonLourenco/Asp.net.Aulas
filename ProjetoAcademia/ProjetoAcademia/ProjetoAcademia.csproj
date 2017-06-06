@@ -225,6 +225,9 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Academias\AcademiaCadastro.aspx" />
     <Content Include="Views\Academias\AcademiaLista.aspx" />
+    <Content Include="Views\Academias\AcademiaBusca.aspx" />
+    <Content Include="Views\Alunos\AlunoBusca.aspx" />
+    <Content Include="Views\Alunos\AlunoCadastro.aspx" />
     <Content Include="Views\Alunos\AlunoLista.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -257,8 +260,12 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AcademiasController.cs" />
-    <Compile Include="Controllers\AlunosController.cs" />
+    <Compile Include="Controllers\AcademiasController.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controllers\AlunosController.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -326,6 +333,27 @@
     <Compile Include="Views\Academias\AcademiaLista.aspx.designer.cs">
       <DependentUpon>AcademiaLista.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Academias\AcademiaBusca.aspx.cs">
+      <DependentUpon>AcademiaBusca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Academias\AcademiaBusca.aspx.designer.cs">
+      <DependentUpon>AcademiaBusca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Alunos\AlunoBusca.aspx.cs">
+      <DependentUpon>AlunoBusca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Alunos\AlunoBusca.aspx.designer.cs">
+      <DependentUpon>AlunoBusca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Alunos\AlunoCadastro.aspx.cs">
+      <DependentUpon>AlunoCadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Alunos\AlunoCadastro.aspx.designer.cs">
+      <DependentUpon>AlunoCadastro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Alunos\AlunoLista.aspx.cs">
       <DependentUpon>AlunoLista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -333,7 +361,7 @@
     <Compile Include="Views\Alunos\AlunoLista.aspx.designer.cs">
       <DependentUpon>AlunoLista.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\BasePage.cs">
+    <Compile Include="Controllers\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
