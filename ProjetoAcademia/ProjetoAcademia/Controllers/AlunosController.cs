@@ -25,17 +25,22 @@ namespace ProjetoAcademia.Controllers
             return contexto.Alunos.Where(c => c.Ativo == true).ToList();
         }
 
+        internal static Aluno BuscaAlunoPorNome(string text)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Aluno> ListarInativos()
         {
             return contexto.Alunos.Where(c => c.Ativo == false).ToList();
         }
 
-        public Aluno BuscarAlunoPorID(int id)
+        public static Aluno BuscarAlunoPorID(int id)
         {
             return contexto.Alunos.Find(id);
         }
 
-        public Aluno BuscarAlunoPorNome(string nome)
+        public static Aluno BuscarAlunoPorNome(string nome)
         {
             return contexto.Alunos.FirstOrDefault(x => x.Nome.Equals(nome));
         }
@@ -60,7 +65,7 @@ namespace ProjetoAcademia.Controllers
             contexto.SaveChanges();
         }
 
-        public void Editar(Aluno aluno)
+        public static void Editar(Aluno aluno)
         {
             contexto.Entry(aluno).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();

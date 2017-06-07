@@ -13,49 +13,58 @@ namespace ProjetoAcademia.Views.Academias {
     public partial class BuscaAcademia {
         
         /// <summary>
-        /// lblBuscar control.
+        /// txtBuscarAcad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBuscar;
+        protected global::System.Web.UI.WebControls.TextBox txtBuscarAcad;
         
         /// <summary>
-        /// txtBuscar control.
+        /// btnBuscarAcad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscar;
+        protected global::System.Web.UI.WebControls.Button btnBuscarAcad;
         
         /// <summary>
-        /// btnBuscar control.
+        /// txtNome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.WebControls.TextBox txtNome;
         
         /// <summary>
-        /// lblEditAcademia control.
+        /// txtEndereco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEditAcademia;
+        protected global::System.Web.UI.WebControls.TextBox txtEndereco;
         
         /// <summary>
-        /// txtEditAcademia control.
+        /// txtTelefone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEditAcademia;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefone;
+        
+        /// <summary>
+        /// txtProfessor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProfessor;
         
         /// <summary>
         /// btnEditAcademia control.

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using ProjetoAcademia.Controllers;
 using ProjetoAcademia.Models;
 using ProjetoAcademia.Views;
@@ -10,9 +11,10 @@ namespace ProjetoAcademia.Controllers
 {
     public class AcademiasController : BasePage
     {
-
+        private static Academia temp;
         public void Adicionar(Academia academia)
         {
+            temp = new Academia();
             if (academia != null)
             {
                 contexto.Academias.Add(academia);
@@ -20,17 +22,23 @@ namespace ProjetoAcademia.Controllers
             }
         }
 
+        internal static Academia BuscarAcademiaPorNome(TextBox txtNome)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Academia> Listar()
         {
             return contexto.Academias.ToList();
         }
 
-        public Academia BuscarAcademiaPorID(int id)
+
+        public static Academia BuscarAcademiaPorId(int id)
         {
             return contexto.Academias.Find(id);
         }
 
-        public Academia BuscarAcademiaPorNome(string nome)
+        public static Academia BuscarAcademiaPorNome(string nome)
             {
                 return contexto.Academias.FirstOrDefault(x => x.Nome.Equals(nome));
             }
@@ -46,8 +54,7 @@ namespace ProjetoAcademia.Controllers
         {
             throw new NotImplementedException();
         }
-
-        public void Editar(Academia academia)
+        public static void Editar(Academia academia)
         {
             contexto.Entry(academia).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();
