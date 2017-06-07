@@ -16,7 +16,6 @@
      </asp:UpdatePanel>
     <br />
     <br />
-
     <asp:Label ID="lblExcAcademia" runat="server" Text="Digite o ID da academia a ser deletada:"></asp:Label>
     <asp:TextBox ID="txtExcAcademia" runat="server"></asp:TextBox>
     <asp:Button ID="btnExcAcademia" CssClass="btn btn-primary" runat="server" Text="Excluir" OnClick="btnExcAcademia_Click" />

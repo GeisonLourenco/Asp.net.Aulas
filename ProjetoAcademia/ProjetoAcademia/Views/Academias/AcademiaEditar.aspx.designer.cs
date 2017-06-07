@@ -10,69 +10,96 @@
 namespace ProjetoAcademia.Views.Academias {
     
     
-    public partial class BuscaAcademia {
+    public partial class AcademiaEditar {
         
         /// <summary>
-        /// txtBuscarAcad control.
+        /// lblNomeAcademia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscarAcad;
+        protected global::System.Web.UI.WebControls.Label lblNomeAcademia;
         
         /// <summary>
-        /// btnBuscarAcad control.
+        /// txtNomeAcademia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscarAcad;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeAcademia;
         
         /// <summary>
-        /// txtNome control.
+        /// txtNovaAcademia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
+        protected global::System.Web.UI.WebControls.TextBox txtNovaAcademia;
         
         /// <summary>
-        /// txtEndereco control.
+        /// txtNovoEndereco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEndereco;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoEndereco;
         
         /// <summary>
-        /// txtTelefone control.
+        /// txtNovoTelefone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefone;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoTelefone;
         
         /// <summary>
-        /// txtProfessor control.
+        /// txtNovoProfessor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProfessor;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoProfessor;
         
         /// <summary>
-        /// btnEditAcademia control.
+        /// btnEditarAcademia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditAcademia;
+        protected global::System.Web.UI.WebControls.Button btnEditarAcademia;
+        
+        /// <summary>
+        /// lblAcademias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAcademias;
+        
+        /// <summary>
+        /// gdvAcademias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvAcademias;
+        
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
     }
 }

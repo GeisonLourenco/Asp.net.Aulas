@@ -22,11 +22,6 @@ namespace ProjetoAcademia.Controllers
             }
         }
 
-        internal static Academia BuscarAcademiaPorNome(TextBox txtNome)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Academia> Listar()
         {
             return contexto.Academias.ToList();
@@ -50,11 +45,16 @@ namespace ProjetoAcademia.Controllers
             contexto.SaveChanges();
         }
 
+        internal Academia buscarAcademiaPorNome(Academia academia)
+        {
+            throw new NotImplementedException();
+        }
+
         internal Academia BuscarAcademiaPorID(Academia academia)
         {
             throw new NotImplementedException();
         }
-        public static void Editar(Academia academia)
+        public void Editar(Academia academia)
         {
             contexto.Entry(academia).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();

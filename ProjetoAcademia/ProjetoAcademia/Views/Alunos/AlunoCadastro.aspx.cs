@@ -30,5 +30,12 @@ namespace ProjetoAcademia.Views.Alunos
             AlunosController actrl = new AlunosController();
             actrl.Adicionar(aluno);
         }
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = string.Empty;
+            txtEndereco.Text = string.Empty;
+            txtTelefone.Text = string.Empty;
+            txtProfessor.Text = string.Empty;
+        }
     }
 }

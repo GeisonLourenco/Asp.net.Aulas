@@ -10,9 +10,10 @@ namespace ProjetoAcademia.Controllers
 {
     public class AlunosController : BasePage
     {
-
+        private static Aluno temp;
         public void Adicionar(Aluno aluno)
         {
+            temp = new Aluno();
             if (aluno != null)
             {
                 contexto.Alunos.Add(aluno);
@@ -40,6 +41,11 @@ namespace ProjetoAcademia.Controllers
             return contexto.Alunos.Find(id);
         }
 
+        internal Aluno buscarAlunoPorNome(Aluno aluno)
+        {
+            throw new NotImplementedException();
+        }
+
         public static Aluno BuscarAlunoPorNome(string nome)
         {
             return contexto.Alunos.FirstOrDefault(x => x.Nome.Equals(nome));
@@ -65,7 +71,7 @@ namespace ProjetoAcademia.Controllers
             contexto.SaveChanges();
         }
 
-        public static void Editar(Aluno aluno)
+        public void Editar(Aluno aluno)
         {
             contexto.Entry(aluno).State = System.Data.Entity.EntityState.Modified;
             contexto.SaveChanges();

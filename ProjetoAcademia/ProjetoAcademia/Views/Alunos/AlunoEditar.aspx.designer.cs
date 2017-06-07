@@ -10,105 +10,123 @@
 namespace ProjetoAcademia.Views.Alunos {
     
     
-    public partial class AlunoBusca {
+    public partial class AlunoEditar {
         
         /// <summary>
-        /// txtBuscarAluno control.
+        /// lblNomeAluno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscarAluno;
+        protected global::System.Web.UI.WebControls.Label lblNomeAluno;
         
         /// <summary>
-        /// btnBuscarAluno control.
+        /// txtNomeAluno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscarAluno;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeAluno;
         
         /// <summary>
-        /// txtNome control.
+        /// txtNovoNome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoNome;
         
         /// <summary>
-        /// txtPeso control.
+        /// txtNovoPeso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPeso;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoPeso;
         
         /// <summary>
-        /// txtAltura control.
+        /// txtNovaAltura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAltura;
+        protected global::System.Web.UI.WebControls.TextBox txtNovaAltura;
         
         /// <summary>
-        /// txtIdade control.
+        /// txtNovaIdade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdade;
+        protected global::System.Web.UI.WebControls.TextBox txtNovaIdade;
         
         /// <summary>
-        /// txtEndereco control.
+        /// txtNovoEnd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEndereco;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoEnd;
         
         /// <summary>
-        /// txtTelefone control.
+        /// txtNovoTel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefone;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoTel;
         
         /// <summary>
-        /// txtObjetivo control.
+        /// txtNovoObjetivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObjetivo;
+        protected global::System.Web.UI.WebControls.TextBox txtNovoObjetivo;
         
         /// <summary>
-        /// ddlAcademia control.
+        /// btnEditarAlunos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAcademia;
+        protected global::System.Web.UI.WebControls.Button btnEditarAlunos;
         
         /// <summary>
-        /// btnEditAluno control.
+        /// lblAlunos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditAluno;
+        protected global::System.Web.UI.WebControls.Label lblAlunos;
+        
+        /// <summary>
+        /// gdvAlunos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvAlunos;
+        
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }
