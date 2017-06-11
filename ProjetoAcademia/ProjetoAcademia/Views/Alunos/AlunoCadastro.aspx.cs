@@ -35,7 +35,10 @@ namespace ProjetoAcademia.Views.Alunos
             txtNome.Text = string.Empty;
             txtEndereco.Text = string.Empty;
             txtTelefone.Text = string.Empty;
-            txtProfessor.Text = string.Empty;
+            txtObjetivo.Text = string.Empty;
+            txtPeso.Text = string.Empty;
+            txtAltura.Text = string.Empty;
+            txtIdade.Text = string.Empty;
         }
     }
 }
