@@ -2,14 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Academias cadastradas na Rede:</h1>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate>
-    <asp:GridView ID="gdvAcademias" runat="server" BorderStyle="Outset" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
-        <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="Nome" HeaderText="Nome" SortExpression="Nome" />
-            <asp:BoundField DataField="Endereco" HeaderText="Endereco" SortExpression="Endereco" />
-            <asp:BoundField DataField="Telefone" HeaderText="Telefone" SortExpression="Telefone" />
-            <asp:BoundField DataField="Professor" HeaderText="Professor" SortExpression="Professor" />
-        </Columns>
+    <asp:GridView ID="gdvAcademias" runat="server" BorderStyle="Outset" AutoGenerateColumns="False">
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BasedeDadosConnectionString %>" SelectCommand="SELECT [Id], [Nome], [Endereco], [Telefone], [Professor] FROM [Academias]"></asp:SqlDataSource>
      </ContentTemplate>
