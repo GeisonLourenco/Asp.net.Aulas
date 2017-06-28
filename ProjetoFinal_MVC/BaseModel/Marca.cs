@@ -12,7 +12,7 @@ namespace BaseModel
         [Key]
         public int MarcaID { get; set; }
 
-        [Required(ErrorMessage = "*"), StringLength(10, ErrorMessage = "Tamanho máximo é 20 caracteres")]
+        [Required(ErrorMessage = "*"), StringLength(30, ErrorMessage = "Tamanho máximo é 30 caracteres")]
         public string Nome { get; set; }
 
         [Display(Name = "Descrição"), DataType(DataType.MultilineText)]

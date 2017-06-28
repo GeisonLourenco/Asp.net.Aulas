@@ -3,7 +3,7 @@ namespace ProjetoFinal_MVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Inicio : DbMigration
+    public partial class PF : DbMigration
     {
         public override void Up()
         {
@@ -62,6 +62,8 @@ namespace ProjetoFinal_MVC.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        Endereco = c.String(),
+                        Nome = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

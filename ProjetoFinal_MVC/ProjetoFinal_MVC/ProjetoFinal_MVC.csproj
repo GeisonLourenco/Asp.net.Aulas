@@ -171,13 +171,18 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SuplementosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706261237059_Inicio.cs" />
-    <Compile Include="Migrations\201706261237059_Inicio.Designer.cs">
-      <DependentUpon>201706261237059_Inicio.cs</DependentUpon>
+    <Compile Include="Migrations\201706281342098_PF.cs" />
+    <Compile Include="Migrations\201706281342098_PF.Designer.cs">
+      <DependentUpon>201706281342098_PF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706281420122_Novo.cs" />
+    <Compile Include="Migrations\201706281420122_Novo.Designer.cs">
+      <DependentUpon>201706281420122_Novo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,6 +256,8 @@
     <Content Include="Views\Suplementos\Details.cshtml" />
     <Content Include="Views\Suplementos\Edit.cshtml" />
     <Content Include="Views\Suplementos\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -270,8 +277,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706261237059_Inicio.resx">
-      <DependentUpon>201706261237059_Inicio.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706281342098_PF.resx">
+      <DependentUpon>201706281342098_PF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706281420122_Novo.resx">
+      <DependentUpon>201706281420122_Novo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

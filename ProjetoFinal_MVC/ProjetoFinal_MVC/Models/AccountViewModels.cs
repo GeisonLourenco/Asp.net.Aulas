@@ -64,6 +64,15 @@ namespace ProjetoFinal_MVC.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "Nome")]
+        public string Name { get; set; }
+
+        [Display(Name = "Nome")]
+        public string Nome { get; set; }
+
+        [Display(Name = "Endereço")]
+        public string Endereco { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

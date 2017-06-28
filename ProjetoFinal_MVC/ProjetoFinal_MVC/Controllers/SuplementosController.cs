@@ -16,6 +16,7 @@ namespace ProjetoFinal_MVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Suplementos
+        [Authorize]
         public ActionResult Index()
         {
             var suplementoes = db.Suplementoes.Include(s => s._Marca);
@@ -23,6 +24,7 @@ namespace ProjetoFinal_MVC.Controllers
         }
 
         // GET: Suplementos/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace ProjetoFinal_MVC.Controllers
         }
 
         // GET: Suplementos/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.MarcaID = new SelectList(db.Marcas, "MarcaID", "Nome");
@@ -48,6 +51,7 @@ namespace ProjetoFinal_MVC.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "SuplementoID,Nome,Descricao,Preco,Validade,Ativo,MarcaID")] Suplemento suplemento)
         {
@@ -63,6 +67,7 @@ namespace ProjetoFinal_MVC.Controllers
         }
 
         // GET: Suplementos/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,6 +87,7 @@ namespace ProjetoFinal_MVC.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "SuplementoID,Nome,Descricao,Preco,Validade,Ativo,MarcaID")] Suplemento suplemento)
         {
@@ -96,6 +102,7 @@ namespace ProjetoFinal_MVC.Controllers
         }
 
         // GET: Suplementos/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +119,7 @@ namespace ProjetoFinal_MVC.Controllers
 
         // POST: Suplementos/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

@@ -16,12 +16,14 @@ namespace ProjetoFinal_MVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Marcas
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Marcas.ToList());
         }
 
         // GET: Marcas/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace ProjetoFinal_MVC.Controllers
         }
 
         // GET: Marcas/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,12 +49,12 @@ namespace ProjetoFinal_MVC.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MarcaID,Nome,Descricao")] Marca marca)
+        public ActionResult Create([Bind(Include = "MarcaID,Nome,Descricao, Ativo")] Marca marca)
         {
             if (ModelState.IsValid)
             {
-                marca.Ativo = true;
                 db.Marcas.Add(marca);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,6 +64,7 @@ namespace ProjetoFinal_MVC.Controllers
         }
 
         // GET: Marcas/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +83,7 @@ namespace ProjetoFinal_MVC.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MarcaID,Nome,Descricao,Ativo")] Marca marca)
         {
@@ -92,6 +97,7 @@ namespace ProjetoFinal_MVC.Controllers
         }
 
         // GET: Marcas/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +114,7 @@ namespace ProjetoFinal_MVC.Controllers
 
         // POST: Marcas/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
