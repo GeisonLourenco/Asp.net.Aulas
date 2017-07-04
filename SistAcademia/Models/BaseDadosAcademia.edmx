@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BaseDadosAcademia.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BaseDadosAcademiaStoreContainer">
+    <EntitySet Name="Alunos" EntityType="BaseDadosAcademia.Store.Alunos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Academias" EntityType="BaseDadosAcademia.Store.Academias" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AcademiaAluno" Association="BaseDadosAcademia.Store.AcademiaAluno">
+      <End Role="Academia" EntitySet="Academias" />
+      <End Role="Aluno" EntitySet="Alunos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Alunos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Peso" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Altura" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Idade" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Objetivo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="AcademiaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Academias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Professor" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="AcademiaAluno">
+    <End Role="Academia" Type="BaseDadosAcademia.Store.Academias" Multiplicity="1" />
+    <End Role="Aluno" Type="BaseDadosAcademia.Store.Alunos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Academia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="AcademiaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BaseDadosAcademia" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="BaseDadosAcademiaContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alunos" EntityType="BaseDadosAcademia.Aluno" />
+          <EntitySet Name="Academias" EntityType="BaseDadosAcademia.Academia" />
+          <AssociationSet Name="AcademiaAluno" Association="BaseDadosAcademia.AcademiaAluno">
+            <End Role="Academia" EntitySet="Academias" />
+            <End Role="Aluno" EntitySet="Alunos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Aluno">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Peso" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Altura" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Idade" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telefone" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Objetivo" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" cg:SetterAccess="Public" />
+          <NavigationProperty Name="Academia" Relationship="BaseDadosAcademia.AcademiaAluno" FromRole="Aluno" ToRole="Academia" />
+          <Property Name="AcademiaId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Academia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telefone" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Professor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Aluno" Relationship="BaseDadosAcademia.AcademiaAluno" FromRole="Academia" ToRole="Aluno" />
+        </EntityType>
+        <Association Name="AcademiaAluno">
+          <End Type="BaseDadosAcademia.Academia" Role="Academia" Multiplicity="1" />
+          <End Type="BaseDadosAcademia.Aluno" Role="Aluno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Academia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Aluno">
+              <PropertyRef Name="AcademiaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BaseDadosAcademiaStoreContainer" CdmEntityContainer="BaseDadosAcademiaContainer">
+    <EntitySetMapping Name="Alunos">
+      <EntityTypeMapping TypeName="IsTypeOf(BaseDadosAcademia.Aluno)">
+        <MappingFragment StoreEntitySet="Alunos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Altura" ColumnName="Altura" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Objetivo" ColumnName="Objetivo" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="AcademiaId" ColumnName="AcademiaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Academias">
+      <EntityTypeMapping TypeName="IsTypeOf(BaseDadosAcademia.Academia)">
+        <MappingFragment StoreEntitySet="Academias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Professor" ColumnName="Professor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
