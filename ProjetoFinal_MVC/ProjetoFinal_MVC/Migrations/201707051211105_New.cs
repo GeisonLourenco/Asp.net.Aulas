@@ -3,7 +3,7 @@ namespace ProjetoFinal_MVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PF : DbMigration
+    public partial class New : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace ProjetoFinal_MVC.Migrations
                 c => new
                     {
                         MarcaID = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false, maxLength: 10),
+                        Nome = c.String(nullable: false, maxLength: 30),
                         Descricao = c.String(),
                         Ativo = c.Boolean(nullable: false),
                     })
@@ -46,7 +46,7 @@ namespace ProjetoFinal_MVC.Migrations
                 c => new
                     {
                         SuplementoID = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false),
+                        Nome = c.String(nullable: false, maxLength: 30),
                         Descricao = c.String(),
                         Preco = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Validade = c.String(nullable: false),

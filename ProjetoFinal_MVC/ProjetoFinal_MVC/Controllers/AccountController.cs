@@ -168,14 +168,22 @@ namespace ProjetoFinal_MVC.Controllers
                     {
                         //Atribui o Peril ao usuário
                         await this.UserManager.AddToRoleAsync(user.Id, model.Name);
+                        ModelState.Clear();
 
+                        if (!User.IsInRole("Admin"))
+                        {
+                            await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                            return View("Index");
+                        }
                         // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                         // Send an email with this link
                         // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                         // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                         // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                        return RedirectToAction("Index", "Home");
+                        ModelState.Clear();
+                        ViewBag.Menssagem = "Usuário " + model.Nome + " adicionado com sucesso!";
+                        return View();
+                        //return RedirectToAction("Index", "Home");
                     }
                     AddErrors(result);
                 }

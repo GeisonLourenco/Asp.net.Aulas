@@ -176,13 +176,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706281342098_PF.cs" />
-    <Compile Include="Migrations\201706281342098_PF.Designer.cs">
-      <DependentUpon>201706281342098_PF.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706281420122_Novo.cs" />
-    <Compile Include="Migrations\201706281420122_Novo.Designer.cs">
-      <DependentUpon>201706281420122_Novo.cs</DependentUpon>
+    <Compile Include="Migrations\201707051211105_New.cs" />
+    <Compile Include="Migrations\201707051211105_New.Designer.cs">
+      <DependentUpon>201707051211105_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -277,11 +273,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706281342098_PF.resx">
-      <DependentUpon>201706281342098_PF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706281420122_Novo.resx">
-      <DependentUpon>201706281420122_Novo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707051211105_New.resx">
+      <DependentUpon>201707051211105_New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

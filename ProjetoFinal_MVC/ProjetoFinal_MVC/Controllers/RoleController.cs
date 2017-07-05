@@ -5,6 +5,8 @@ using ProjetoFinal_MVC.Models;
 
 namespace Mvc_Roles.Controllers
 {
+    //Somente usuários administradores tem acesso a controle
+    [Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
         ApplicationDbContext context;
